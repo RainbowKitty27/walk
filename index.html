@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:white">
+
+    <a-camera position="0 8 15"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets timeout="10000">
+
+      <a-asset-item id="aether" src="./images/aether/scene.gltf"></a-asset-item>      
+      <a-asset-item id="lumine" src="./images/lumine/scene.gltf"></a-asset-item>
+      <a-asset-item id="food" src="./images/paimon/scene.gltf"></a-asset-item>
+
+    </a-assets>
+
+    
+    <a-sky color="black"></a-sky>
+
+
+<a-entity light="type:ambient;intesity:0.5"></a-entity>
+
+
+    <a-entity animation="property:rotation;to: 0 360 0; easing:linear;loop:true;dir:6000">
+        <a-entity light="type:directional;castShadow:true;intesity:1;distance:50;decay:2;color:#04125A" position="-100 18 20"></a-entity></a-entity>
+ 
+   
+    <a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" shadow="receive: true" visible="true"
+      color="#000A3B">
+    </a-circle>
+
+
+    
+    <a-entity>
+      <a-entity position="10 7 -1" rotation="0 0 0" scale="2 2 2" gltf-model="#food" shadow="cast: true; resive:true">
+      </a-entity>
+    </a-entity>
+    <a-entity>
+      <a-entity position="6 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#lumine" shadow="cast: true; resive:true">
+      </a-entity>
+    </a-entity>
+    <a-entity>
+      <a-entity position="14 0 -1" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#aether" shadow="cast: true; resive:true">
+      </a-entity>
+    </a-entity>
+   
+    
+   
+  </a-scene>
+</body>
+
+</html>
